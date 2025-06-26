@@ -1,26 +1,27 @@
+
+![image](https://github.com/user-attachments/assets/84a47e61-dbb0-4f5d-ae8c-226203b2bb15)
+
+
 # Explication de l'Algorithme de Newton-Raphson pour Calculer la Racine n-ième
 
 L'algorithme de Newton-Raphson est une méthode itérative pour trouver une approximation numérique des **racines d'une fonction** (c'est-à-dire les solutions de \( f(x) = 0 \)).  
 Dans le cas du calcul de la **racine n-ième** d'un nombre \( \text{number} \), on cherche \( x \) tel que :  
-\[
-x^n = \text{number} \quad \Rightarrow \quad f(x) = x^n - \text{number} = 0.
-\]
+![image](https://github.com/user-attachments/assets/924cb23e-5593-48c7-b62d-b15d56b1ef54)
+
 
 ---
 
 ### **Formule Itérative (Newton-Raphson)**
 La formule de mise à jour est :  
-\[
-x_{\text{new}} = x - \frac{f(x)}{f'(x)}
-\]  
+![image](https://github.com/user-attachments/assets/cb80c860-4e80-4adb-a23b-d4ee59884134)
+
 où :
-- \( f(x) = x^n - \text{number} \) (la fonction dont on cherche la racine),
-- \( f'(x) = n \cdot x^{n-1} \) (sa dérivée).
+![image](https://github.com/user-attachments/assets/edef8e18-24a8-4124-a5e5-3c6b2b2f35e7)
+
 
 En substituant, on obtient la formule utilisée dans l'exercice :  
-\[
-x_{\text{new}} = x - \frac{x^n - \text{number}}{n \cdot x^{n-1}}.
-\]
+![image](https://github.com/user-attachments/assets/a3cfda85-eb6e-44d9-9486-d627ade702c4)
+
 
 ---
 
@@ -33,29 +34,12 @@ x_{\text{new}} = x - \frac{x^n - \text{number}}{n \cdot x^{n-1}}.
 
 3. **Critère d'arrêt** :  
    - On s'arrête quand la différence entre deux itérations est inférieure à une tolérance \( \epsilon \) (ex: \( \epsilon = 10^{-6} \)).  
-   - Cela signifie que \( |x_{\text{new}} - x| < \epsilon \).
+  ![image](https://github.com/user-attachments/assets/2045fadd-edbd-466f-b923-2d6d358d1f24)
 
 ---
 
 ### **Exemple avec la Racine Carrée (n=2)**
-**Problème** : Trouver \( \sqrt{25} \) (i.e., \( \text{number} = 25 \), \( n = 2 \)).  
-- **Fonction** : \( f(x) = x^2 - 25 \),  
-- **Dérivée** : \( f'(x) = 2x \).  
-
-**Itérations** :
-1. \( x_0 = 25 \) (estimation initiale).  
-   \[
-   x_1 = 25 - \frac{25^2 - 25}{2 \cdot 25} = 25 - \frac{625 - 25}{50} = 25 - 12 = 13.
-   \]
-2. \( x_1 = 13 \).  
-   \[
-   x_2 = 13 - \frac{13^2 - 25}{2 \cdot 13} = 13 - \frac{169 - 25}{26} \approx 13 - 5.538 \approx 7.462.
-   \]
-3. \( x_3 \approx 7.462 - \frac{7.462^2 - 25}{2 \cdot 7.462} \approx 5.406 \).  
-4. \( x_4 \approx 5.406 - \frac{5.406^2 - 25}{2 \cdot 5.406} \approx 5.016 \).  
-5. \( x_5 \approx 5.016 - \frac{5.016^2 - 25}{2 \cdot 5.016} \approx 5.000 \).  
-
-**Résultat** : La suite converge vers \( 5 \) (la racine exacte).
+![image](https://github.com/user-attachments/assets/c709bf36-0fbc-4625-a7eb-f821129243aa)
 
 ---
 
@@ -78,4 +62,10 @@ x_{\text{new}} = x - \frac{x^n - \text{number}}{n \cdot x^{n-1}}.
 2. **Sensibilité à l'initialisation** :  
    - Une mauvaise estimation initiale peut conduire à une divergence.  
 3. **Cas pathologiques** :  
-   - Éviter \( x = 0 \) (dérivée nulle).  
+   - Éviter \( x = 0 \) (dérivée nulle).
+  
+
+
+![image](https://github.com/user-attachments/assets/bb83b67e-317e-4fc5-b790-62e2a906f760)
+
+
